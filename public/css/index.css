@@ -1,0 +1,12 @@
+.tasks-container{
+    background-color: rgb(243, 243, 243);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.task-row{
+    padding: 3px;
+    font-size: 18px;
+    border: 1px solid;
+    margin-bottom: 1px;
+}
