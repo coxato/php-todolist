@@ -10,7 +10,14 @@ if(isset($_POST['description'])){
     $zeroFalse = 0;
     $stmt->bind_param($params, $desc, $zeroFalse);
     
-    $stmt->execute();
+    $executed = $stmt->execute();
+
+    // var_dump($executed);
+
+    echo json_encode([
+    	"data" => 123
+    ]);
+
 }
 
-
+// var_dump("Hola");

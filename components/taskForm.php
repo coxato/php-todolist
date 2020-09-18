@@ -1,4 +1,4 @@
-<form method="post" action="index.php">
+<form method="post" id="myform">
     <div class="form-group">
         <label for="description">task</label>
         <input type="text" class="form-control" name="description" placeholder="task description">

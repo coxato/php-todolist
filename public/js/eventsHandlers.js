@@ -4,7 +4,7 @@ import {
 
 // form submit handler
 function handleFormSubmit(){
-    const form = document.getElementById('taskForm');
+    const form = document.getElementById('myform');
     form.addEventListener('submit', createTask);
 }
 
