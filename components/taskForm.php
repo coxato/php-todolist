@@ -1,7 +1,30 @@
 <form method="post" id="myform">
+    <img src="public/to-do-list.svg" alt="Todo list" class="logo">
     <div class="form-group">
-        <label for="description">task</label>
-        <input type="text" class="form-control" name="description" placeholder="task description">
+        <label for="title" class="mb-3">
+            <strong>
+                Your task title:
+            </strong>
+        </label>
+        <input 
+            type="text" 
+            class="mb-4 py-4 form-control" 
+            name="title" 
+            id="title"
+            placeholder="Task title"
+            minlength="1"
+        >
+        <label for="description" class="mb-3">
+            <strong>
+                Your task description:
+            </strong>
+        </label>
+        <textarea 
+            placeholder="Task description" 
+            id="description" 
+            minlength="1"></textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Add</button>
+    <button type="submit" class="btn btn-add">
+        +
+    </button>
 </form>

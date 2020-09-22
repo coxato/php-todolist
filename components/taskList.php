@@ -2,41 +2,34 @@
     $tasks = $db->query("SELECT * FROM task");
 ?>
 
-<div class="tasks-container">
-    <?php 
-        if ($tasks->num_rows > 0) {
-            // output data of each row
-            while($row = $tasks->fetch_assoc()) {
-            echo "<div class='task-row'>" . $row["description"] . "</div>";
-            }
-        } else {
-            echo "0 tasks";
-        }
-    ?>
-</div>
-<?php 
-    $tasks = $db->query("SELECT * FROM task");
-?>
-
-{{ $tasks }}
-
-
-<h1>Otra version:</h1>
-
-<div class="tasks-container">
+<h3 class="tasks mt-5 mb-4">Your task</h3>
+<main class="row tasks-container">
     <?php 
         if ($tasks->num_rows > 0): 
         // output data of each row
             while($row = $tasks->fetch_assoc()):
     ?>
-                <div class='task-row'><?php echo($row["description"]);?></div>
+                <div class='col-xm-12 col-6 px-2 my-3'>
+                    <div class="task">
+                        <div class="row">
+                            <div class="col-6">
+                                <h6 class="task-title">
+                                    <?php echo($row["description"]);?>
+                                </h6>
+                            </div>
+                            <div class="col-6 pr-0">
+                                <img src="public/task.svg" alt="An task" class="task-item">
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
         <?php
             endwhile;
-            else:
+        else:
         ?>
             0 tasks
         <?php endif;?>
-</div>
+</main>
 
 

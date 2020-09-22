@@ -12,8 +12,7 @@
 </head>
 <body>
 
-    <div class="container">
-        <h1 class="title">PHP TodoList</h1>
+    <div class="task-container">
         <!-- form -->
         <?php include('components/taskForm.php'); ?>
         <!-- list -->

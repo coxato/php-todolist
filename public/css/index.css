@@ -1,12 +1,86 @@
-.tasks-container{
-    background-color: rgb(243, 243, 243);
-    padding: 10px;
-    border-radius: 5px;
+* {
+  font-family: "Varela Round", sans-serif;
 }
 
-.task-row{
-    padding: 3px;
-    font-size: 18px;
-    border: 1px solid;
-    margin-bottom: 1px;
+body {
+  background: #eee;
+  color: rgba(0, 0, 0, 0.863);
+}
+
+.task-container {
+  max-width: 680px;
+  width: 100%;
+  margin: auto;
+  margin-top: 8rem;
+}
+.task-row {
+}
+
+#myform {
+  padding: 2rem 3rem;
+  background: #fff;
+  border-radius: 2rem;
+  position: relative;
+  box-shadow: 1px 9px 18px rgba(0, 0, 0, 0.123);
+}
+
+.logo {
+  position: absolute;
+  display: block;
+  width: 180px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -75px;
+}
+
+.btn-add {
+  border: 0;
+  color: #fff !important;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #2172F2; /* fallback for old browsers */
+
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  left: 50%;
+  bottom: -25px;
+  transform: translateX(-50%);
+  box-shadow: 1px 9px 18px rgba(0, 0, 0, 0.123);
+  transition: all .2s ease-in;
+}
+
+.btn-add:hover{
+    background: #0a57d4;
+}
+
+.btn-add:focus,
+.btn-add:active {
+  box-shadow: none;
+}
+
+.btn-add:active{
+    transform: translateY(-5px);
+}
+
+.task {
+  background: #fff;
+  box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.075);
+  padding: 2rem 3rem;
+  border-radius: 20px;
+}
+
+.task-title::first-letter {
+  text-transform: uppercase;
+}
+
+.task-item{
+    width: 100%;
+}
+
+.task-title{
+    font-weight: bold;
 }

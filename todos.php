@@ -2,22 +2,20 @@
 
 include("db.php");
 
-if(isset($_POST['description'])){
+if(isset($_POST['title']) && isset($_POST['description'])){
+    $title = $_POST['title'];
     $desc = $_POST['description'];
+    
     // prepare query
-    $stmt = $db->prepare("INSERT INTO task (description, completed) VALUES (?, ?)");
-    $params = 'si';
+    $stmt = $db->prepare("INSERT INTO task (title, description, completed) VALUES (?, ?, ?)");
+    $params = 'ssi';
     $zeroFalse = 0;
-    $stmt->bind_param($params, $desc, $zeroFalse);
+    $stmt->bind_param($params, $title, $desc, $zeroFalse);
     
     $executed = $stmt->execute();
-
-    // var_dump($executed);
-
     echo json_encode([
-    	"data" => 123
+        "title" => $title,
+        "description" => $desc
     ]);
 
 }
-
-// var_dump("Hola");
