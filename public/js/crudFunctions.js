@@ -1,9 +1,16 @@
+const alerta = document.getElementById("alerta");
+
+function isValidDataForm(form) {
+  const { description, title } = form;
+  return description.value.length > 0 && title.value.length > 0;
+}
+
 async function createTask(ev) {
   ev.preventDefault();
-  const { description, title } = ev.target;
-
-  
-  if (description.value.length > 0 && title.value.length > 0) {
+  if (isValidDataForm(ev.target)) {
+    alerta.classList.remove("alert-visible");
+    alerta.classList.add("alert-hidden");
+    
     const formData = new FormData(ev.target);
 
     try {
@@ -22,6 +29,8 @@ async function createTask(ev) {
     }
   } else {
     console.error("Campo vacio");
+    alerta.classList.remove("alert-hidden");
+    alerta.classList.add("alert-visible");
   }
 }
 

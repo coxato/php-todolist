@@ -25,8 +25,16 @@
             class="form-control"
             name="description"
             placeholder="Task description" 
+            class="mb-4 form-control" 
+            name="description" 
             id="description" 
             minlength="1"></textarea>
+    </div>
+    <div class="alert alert-danger alert-hidden" role="alert" id="alerta">
+        <small>
+            <i class="fa fa-times mr-2"> </i>
+            Campos vacios, compruebe sus datos por favor.
+        </small>
     </div>
     <button type="submit" class="btn btn-add">
         +
