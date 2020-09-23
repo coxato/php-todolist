@@ -32,6 +32,15 @@ class TodoList extends Request {
       alert(error);
     }
   }
+
+  async changeStatus(data) {
+    try {
+      const response = await this.send("todo-update-status.php", data, "POST");
+      return response;
+    } catch (error) {
+      alert(error);
+    }
+  }
 }
 
 export default new TodoList();

@@ -14,12 +14,16 @@
             placeholder="Task title"
             minlength="1"
         >
+    </div>
+    <div class="form-group">
         <label for="description" class="mb-3">
             <strong>
                 Your task description:
             </strong>
         </label>
         <textarea 
+            class="form-control"
+            name="description"
             placeholder="Task description" 
             class="mb-4 form-control" 
             name="description" 

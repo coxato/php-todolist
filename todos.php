@@ -2,6 +2,7 @@
 
 include("db.php");
 
+// create task
 if(isset($_POST['title']) && isset($_POST['description'])){
     $title = $_POST['title'];
     $desc = $_POST['description'];
@@ -14,8 +15,24 @@ if(isset($_POST['title']) && isset($_POST['description'])){
     
     $executed = $stmt->execute();
     echo json_encode([
-        "title" => $title,
-        "description" => $desc
+        "ok" => $executed
+    ]);
+
+}
+
+
+// delete task
+if(isset($_POST['deleteId'])){
+    $id = $_POST['deleteId'];
+    
+    // prepare query
+    $stmt = $db->prepare("DELETE FROM task WHERE id=(?)");
+    $params = 'i';
+    $stmt->bind_param($params, $id);
+    
+    $executed = $stmt->execute();
+    echo json_encode([
+        "ok" => $executed
     ]);
 
 }

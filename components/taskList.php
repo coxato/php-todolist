@@ -2,7 +2,7 @@
     $tasks = $db->query("SELECT * FROM task");
 ?>
 
-<h3 class="tasks mt-5 mb-4">Your task</h3>
+<h3 class="tasks mt-5 mb-4">Your tasks</h3>
 <main class="row tasks-container">
     <?php 
         if ($tasks->num_rows > 0): 
