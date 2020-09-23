@@ -53,13 +53,17 @@ body {
   background: #0a57d4;
 }
 
+.btn-add:active {
+  background: #0646ac;
+}
+
 .btn-add:focus,
 .btn-add:active {
   box-shadow: none;
 }
 
-.btn-add:active {
-  transform: translateY(-5px);
+.task-not-available{
+  opacity: 0.5;
 }
 
 .task {
@@ -103,17 +107,29 @@ body {
   border-radius: 15px;
   background: #2172f2;
   color: #fff;
-  box-shadow: 1px 7px 5px rgba(0, 0, 0, 0.096); 
+  box-shadow: 1px 7px 5px rgba(0, 0, 0, 0.096);
 }
 
-.task-detail:not(:last-child){
+.task-detail:not(:last-child) {
   margin-right: 5px;
 }
 
-.task-complete{
+.task-options {
+  position: absolute;
+  top: 19px;
+  right: 18px;
+  cursor: pointer;
+  z-index: 2;
+}
+.task-options > i.fa{
+  padding: .2rem .5rem;
+}
+
+.task-complete {
   background-color: #158467;
 }
-.task-incomplete{
+
+.task-incomplete {
   background-color: #ffc93c;
   color: #000;
 }
