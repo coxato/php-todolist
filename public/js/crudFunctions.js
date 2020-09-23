@@ -1,9 +1,16 @@
+const alerta = document.getElementById("alerta");
+
+function isValidDataForm(form) {
+  const { description, title } = form;
+  return description.value.length > 0 && title.value.length > 0;
+}
+
 async function createTask(ev) {
   ev.preventDefault();
-  const { description, title } = ev.target;
-
-  
-  if (description.value.length > 0 && title.value.length > 0) {
+  if (isValidDataForm(ev.target)) {
+    alerta.classList.remove("alert-visible");
+    alerta.classList.add("alert-hidden");
+    
     const formData = new FormData(ev.target);
 
     try {
@@ -13,11 +20,15 @@ async function createTask(ev) {
       });
       const json = await response.json();
       console.log(json);
+      location.reload();
+      
     } catch ({ message }) {
       console.error("error creating task", message);
     }
   } else {
     console.error("Campo vacio");
+    alerta.classList.remove("alert-hidden");
+    alerta.classList.add("alert-visible");
   }
 }
 

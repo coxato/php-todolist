@@ -10,10 +10,7 @@ body {
 .task-container {
   max-width: 680px;
   width: 100%;
-  margin: auto;
-  margin-top: 8rem;
-}
-.task-row {
+  margin: 8rem auto 2rem auto;
 }
 
 #myform {
@@ -40,21 +37,20 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #2172F2; /* fallback for old browsers */
-
-  width: 50px;
-  height: 50px;
+  background: #2172f2;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   font-size: 1.8rem;
   left: 50%;
-  bottom: -25px;
+  bottom: -30px;
   transform: translateX(-50%);
   box-shadow: 1px 9px 18px rgba(0, 0, 0, 0.123);
-  transition: all .2s ease-in;
+  transition: all 0.2s ease-in;
 }
 
-.btn-add:hover{
-    background: #0a57d4;
+.btn-add:hover {
+  background: #0a57d4;
 }
 
 .btn-add:focus,
@@ -62,25 +58,76 @@ body {
   box-shadow: none;
 }
 
-.btn-add:active{
-    transform: translateY(-5px);
+.btn-add:active {
+  transform: translateY(-5px);
 }
 
 .task {
   background: #fff;
   box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.075);
-  padding: 2rem 3rem;
+  padding: 2rem;
   border-radius: 20px;
+  position: relative;
 }
 
 .task-title::first-letter {
   text-transform: uppercase;
 }
 
-.task-item{
-    width: 100%;
+.task-item {
+  width: 100%;
 }
 
-.task-title{
-    font-weight: bold;
+.task-title {
+  font-weight: bold;
+  font-size: small;
+}
+
+.task-description {
+  color: rgba(0, 0, 0, 0.575);
+  font-size: small;
+}
+
+.task-details {
+  position: absolute;
+  bottom: -18px;
+  right: 2px;
+  display: flex;
+}
+
+.task-detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 15px;
+  background: #2172f2;
+  color: #fff;
+  box-shadow: 1px 7px 5px rgba(0, 0, 0, 0.096); 
+}
+
+.task-detail:not(:last-child){
+  margin-right: 5px;
+}
+
+.task-complete{
+  background-color: #158467;
+}
+.task-incomplete{
+  background-color: #ffc93c;
+  color: #000;
+}
+
+.alert {
+  transition: all 0.2s ease-in;
+}
+
+.alert-hidden {
+  opacity: 0 !important;
+  display: none;
+}
+
+.alert-visible {
+  opacity: 1;
+  display: block;
 }

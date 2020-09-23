@@ -7,7 +7,7 @@ if(isset($_POST['title']) && isset($_POST['description'])){
     $desc = $_POST['description'];
     
     // prepare query
-    $stmt = $db->prepare("INSERT INTO task (title, description, completed) VALUES (?, ?, ?)");
+    $stmt = $db->prepare("INSERT INTO task (title, description, fecha, completed) VALUES (?, ?, NOW(), ?)");
     $params = 'ssi';
     $zeroFalse = 0;
     $stmt->bind_param($params, $title, $desc, $zeroFalse);
