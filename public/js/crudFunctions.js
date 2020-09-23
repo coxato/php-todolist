@@ -11,8 +11,12 @@ async function createTask(ev) {
         method: "POST",
         body: formData,
       });
-      const json = await response.json();
-      console.log(json);
+      const created = await response.json();
+      if(created.ok === true){
+        window.location.reload();
+      }else{
+        alert("Sorry, the task is not created");
+      }
     } catch ({ message }) {
       console.error("error creating task", message);
     }

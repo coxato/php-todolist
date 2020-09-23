@@ -2,7 +2,7 @@
     $tasks = $db->query("SELECT * FROM task");
 ?>
 
-<h3 class="tasks mt-5 mb-4">Your task</h3>
+<h3 class="tasks mt-5 mb-4">Your tasks</h3>
 <main class="row tasks-container">
     <?php 
         if ($tasks->num_rows > 0): 
@@ -14,6 +14,11 @@
                         <div class="row">
                             <div class="col-6">
                                 <h6 class="task-title">
+                                    <?php echo($row["title"]);?>
+                                </h6>
+                            </div>
+                            <div class="col-6">
+                                <h6 class="task-description">
                                     <?php echo($row["description"]);?>
                                 </h6>
                             </div>
