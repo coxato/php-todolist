@@ -9,7 +9,7 @@ class Request {
       const response = await xhr.json();
       return response;
     } catch (error) {
-      alert(error);
+      return error;
     }
   }
 
@@ -28,8 +28,8 @@ class TodoList extends Request {
     try {
       const response = await this.send("todos.php", data, "POST", true);
       return response;
-    } catch (error) {
-      alert(error);
+    } catch ({message}) {
+      alert(message);
     }
   }
 
@@ -37,8 +37,18 @@ class TodoList extends Request {
     try {
       const response = await this.send("todo-update-status.php", data, "POST");
       return response;
-    } catch (error) {
-      alert(error);
+    } catch ({message}) {
+      alert(message);
+    }
+  }
+
+  async deleteTask(id){
+    try {
+      const response = await this.send("todos.php", {deleteId: id}, "POST");
+      console.log(response);
+      return response;
+    } catch ({message}) {
+      
     }
   }
 }

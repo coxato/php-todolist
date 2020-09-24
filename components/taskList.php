@@ -1,3 +1,4 @@
+  
 <?php 
     $tasks = $db->query("SELECT * FROM task");
 ?>
@@ -15,7 +16,7 @@
                         <div class="task-options">
                             <i class="fa fa-ellipsis-v" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
                             <div class="dropdown-menu shadow-sm" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item deleteBtn" href="#" data-id="<?php echo $row["id"]?>">
                                     <small>
                                         <i class="fa fa-trash mr-2"></i> Borrar tarea
                                     </small>
@@ -65,5 +66,3 @@
         0 tasks
     <?php endif;?>
 </main>
-
-

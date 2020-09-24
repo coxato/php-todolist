@@ -2,11 +2,6 @@ import TodoList from "./ajax.js";
 import isValidDataForm from "./formValidation.js";
 import alertToggler from "./alertToggler.js";
 
-const btn_buttons = document.querySelectorAll(".task-status-toggler");
-
-btn_buttons.forEach((btn) =>
-  btn.addEventListener("click", changeTaskStatus, false)
-);
 
 async function createTask(ev) {
   ev.preventDefault();
@@ -20,16 +15,19 @@ async function createTask(ev) {
   }
 }
 
-async function changeTaskStatus(ev) {
-  ev.preventDefault();
-  const id = ev.target.parentNode.getAttribute("data-id");
-  const completed = this.getAttribute("data-completed") === "1" ? "0" : "1";
+async function changeTaskStatus(id, completed) {
+  const isCompleted = completed === "1" ? "0" : "1";
 
   await TodoList.changeStatus({
     id,
-    completed,
+    completed: isCompleted,
   });
   location.reload();
 }
 
-export { createTask };
+async function deleteTask(id) {
+  await TodoList.deleteTask(id);
+  location.reload();
+}
+
+export { createTask, deleteTask, changeTaskStatus };
