@@ -1,7 +1,5 @@
 <?php 
-
-include("db.php");
-
+include_once "db.php";
 if(isset($_POST['id']) && isset($_POST['completed'])){
     $id = $_POST['id'];
     $completed = $_POST['completed'];
@@ -14,5 +12,5 @@ if(isset($_POST['id']) && isset($_POST['completed'])){
         "completed" => $completed,
         "executed" => $executed 
     ]);
-
+    
 }

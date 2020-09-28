@@ -19,7 +19,10 @@ function handleDeleteTask() {
     deleteButtons.forEach( btn => {
       // obtener el id para evitar clickar en el target incorrecto
       const id = btn.getAttribute("data-id");
-      btn.addEventListener('click', () => deleteTask(id));
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        deleteTask(id)
+      });
     }) 
   }
 }

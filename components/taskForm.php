@@ -40,3 +40,13 @@
         +
     </button>
 </form>
+
+<form method="get" id="myform" class="mt-5">
+    <div class="form-group">
+        <label for="search">Buscar:</label>
+        <input type="text" name="search" id="search" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary">
+        Buscar tareas
+    </button>
+</form>

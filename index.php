@@ -14,9 +14,15 @@
 
     <div class="task-container">
         <!-- form -->
-        <?php include('components/taskForm.php'); ?>
-        <!-- list -->
-        <?php include('components/taskList.php'); ?>
+        <?php
+            include_once "checkParams.php";
+            if(checkQuerySearch()){
+                include 'components/taskListSearch.php';
+            }else{
+                include 'components/taskForm.php';
+                include 'components/taskList.php';
+            }
+        ?>
     </div>
     
     <?php include_once 'public/footer.php' ?>

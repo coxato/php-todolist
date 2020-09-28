@@ -1,7 +1,5 @@
 <?php 
-
-include("db.php");
-
+include_once "db.php";
 // create task
 if(isset($_POST['title']) && isset($_POST['description'])){
     $title = $_POST['title'];
@@ -19,7 +17,6 @@ if(isset($_POST['title']) && isset($_POST['description'])){
     ]);
 
 }
-
 
 // delete task
 if(isset($_POST['deleteId'])){
