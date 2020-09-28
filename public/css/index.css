@@ -147,3 +147,9 @@ body {
   opacity: 1;
   display: block;
 }
+
+@media screen and (max-width:750px){
+  .task-container{
+    max-width: 90%;
+  }
+}

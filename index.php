@@ -8,10 +8,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List</title>
-    <?php include_once 'public/header.php' ?>
+    <?php include_once 'public/header.php';?>
 </head>
 <body>
-
+    <?php include_once 'components/loader.php';?>
     <div class="task-container">
         <!-- form -->
         <?php
