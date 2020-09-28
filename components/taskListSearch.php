@@ -5,7 +5,10 @@
 
     $search = mysqli_real_escape_string($db, $_GET["search"]);
     $tasks = $db->query("SELECT * FROM task 
-                        WHERE title LIKE '%$search%' 
+                        WHERE( 
+                            title LIKE '%$search%' OR
+                            description LIKE '%$search%'
+                        ) 
                         ORDER BY completed ASC");
 ?>
 
