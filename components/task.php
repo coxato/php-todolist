@@ -7,7 +7,7 @@
         $fecha = $task["fecha"];
 
     ?>
-        <div class='col-lg-6 col-xs-12 px-2 my-1 mb-4'>
+        <div class='col-12 px-2 my-1 mb-4'>
             <div class="task">
                 <div class="task-options">
                     <i class="fa fa-ellipsis-v" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>

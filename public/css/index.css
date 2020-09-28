@@ -62,7 +62,7 @@ body {
   box-shadow: none;
 }
 
-.task-not-available{
+.task-not-available {
   opacity: 0.5;
 }
 
@@ -121,8 +121,8 @@ body {
   cursor: pointer;
   z-index: 2;
 }
-.task-options > i.fa{
-  padding: .2rem .5rem;
+.task-options > i.fa {
+  padding: 0.2rem 0.5rem;
 }
 
 .task-complete {
@@ -148,8 +148,8 @@ body {
   display: block;
 }
 
-@media screen and (max-width:750px){
-  .task-container{
+@media screen and (max-width: 750px) {
+  .task-container {
     max-width: 90%;
   }
 }
